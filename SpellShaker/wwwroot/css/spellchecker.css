@@ -1,0 +1,142 @@
+header {
+    border-bottom: 1px solid #eee;
+    padding: 5px 0;
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+    header .logo img {
+        width: 170px;
+    }
+
+h1 {
+    margin: 0 0 30px;
+    font-size: 26px;
+    font-weight: 500;
+    color: #414141;
+    text-align: center;
+}
+
+.error {
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #F44336;
+}
+
+    .error p {
+        margin-top: 0;
+        font-size: 16px;
+        color: #F44336;
+    }
+
+    .error code {
+        font-size: 14px;
+        color: #414141;
+    }
+
+main {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 768px;
+}
+
+form textarea {
+    width: 768px;
+    height: 80px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #414141;
+    font-size: 14px;
+    resize: none;
+    border: 1px solid #e6e6e6;
+    box-sizing: border-box;
+}
+
+::placeholder {
+    color: #cacaca;
+    font-size: 14px;
+}
+
+form .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+    form .buttons button, form .buttons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 130px;
+        height: 40px;
+        font-size: 14px;
+        font-weight: 400;
+        transition: all .2s ease-in-out;
+    }
+
+        form .buttons button:hover {
+            opacity: .8;
+        }
+
+        form .buttons button:focus {
+            outline: none;
+        }
+
+        form .buttons button.check {
+            color: #ff7200;
+            background: white;
+            border: 2px solid #ff7200;
+        }
+
+        form .buttons a.correct {
+            color: white;
+            background: #ff7200;
+            border: none;
+            text-decoration: none;
+        }
+
+main .result p.mistakes {
+    font-size: 18px;
+    color: #414141;
+}
+
+main .result p span {
+    color: #F44336;
+    font-weight: 600;
+}
+
+main .result > ul {
+    list-style: decimal;
+}
+
+main .result p.incorrect-word {
+    color: #F44336;
+}
+
+main .result li.correct-word {
+    display: flex;
+    align-items: center;
+    margin: 0 0 7px;
+}
+
+    main .result li.correct-word p {
+        color: #84c341;
+    }
+
+    main .result li.correct-word p {
+        margin: 0;
+    }
+
+    main .result li.correct-word em {
+        color: #414141;
+    }
+
+footer {
+    border-top: 1px solid #eee;
+    color: #767676;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 70px;
+    text-align: center;
+}

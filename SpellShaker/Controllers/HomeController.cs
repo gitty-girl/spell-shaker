@@ -1,37 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using SpellShaker.Models;
+using SpellChecker.Models.SpellCheck;
+using SpellChecker.Services;
 
-namespace SpellShaker.Controllers
+namespace SpellChecker.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly ISpellCheckService _service;
+
+        public HomeController(ISpellCheckService service)
         {
-            return View();
+            _service = service;
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
+        public IActionResult Index() =>
+            View(new SpellCheckDto());
 
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        [HttpPost]
+        public async Task<IActionResult>  SpellCheck([FromForm]SpellCheckDto dto) =>
+            View("Index", await _service.SpellCheck(dto.Input));
     }
 }
